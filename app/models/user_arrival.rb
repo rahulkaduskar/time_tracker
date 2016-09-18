@@ -1,6 +1,6 @@
 class UserArrival < ActiveRecord::Base
 
-  INTIME = Time.parse("10:00:00AM IST")	
+  INTIME =  "10:00:00AM".in_time_zone("Mumbai")
 
   CONFIDANCE_INTERVAL_PERCENT = 95
 
