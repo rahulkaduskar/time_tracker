@@ -5,24 +5,25 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
+* Ruby version 2.3.0
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+Command to execute : Rspec
 
-* Deployment instructions
+* Details of the application:
 
-* ...
+This application is related to the Time and Attandance Managment System of the employee.
+This system is having below features:
+
+1.Tracking employee hours.
+2.Automate employee time In tracking.
+3.Information in case of late In time.
+
+
 
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
