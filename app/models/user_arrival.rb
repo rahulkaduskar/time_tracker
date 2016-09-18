@@ -39,11 +39,12 @@ class UserArrival < ActiveRecord::Base
 
   def self.calculate_avg_confidance(user_id = nil)
   	values = UserArrival.select("STDDEV(Time(arrived_at)) as sdt, avg(Time_to_sec(arrived_at)) average_time, sqrt(count(*)) as sqrt_count")
-    values.where(user_id: user_id)  unless user_id.blank?
+    values = values.where(user_id: user_id)  unless user_id.blank?
+    binding.pry
     values = values.first
     if values['average_time'].present? && values['sdt'].present?
       avg_time = values['average_time']
-      confidance_time = avg_time - ((1 - CONFIDANCE_INTERVAL_PERCENT/100) * (values['sdt']/values['sqrt_count']))
+      confidance_time = avg_time + ((1 - CONFIDANCE_INTERVAL_PERCENT/100) * (values['sdt']/values['sqrt_count']))
       return Time.zone.at(avg_time), Time.zone.at(confidance_time)
     else
      return  nil, nil
