@@ -1,7 +1,7 @@
 class UserArrivalsController < ApplicationController
 
   def index
-  	@user_arrivals = UserArrival.all
+  	@user_arrivals = UserArrival.order("arrived_at desc").all
   	@avg_time, @confidance_time = UserArrival.calculate_avg_confidance
   end
 
