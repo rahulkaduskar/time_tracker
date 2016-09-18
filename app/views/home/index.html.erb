@@ -1,0 +1,13 @@
+<h2> User Arrival: Add username and press enter </h2>
+<br/>
+<div id="errors">
+  <% @user_arrival.errors.each do | attr, msg| %>
+  	<%= msg %>
+  <% end %>
+</div>
+<%= form_for(@user_arrival) do |f| %>
+  <div class="field" style="width:300px">
+    <%= text_field_tag :username, nil, placeholder: 'input username', class: 'form-control' %>
+  </div>
+<% end %>
+

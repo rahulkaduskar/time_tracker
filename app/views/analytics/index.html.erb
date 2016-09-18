@@ -1,0 +1,7 @@
+<h2> Analytics </h2>
+<div>
+  <div> Average Arrival Time: <%= @avg_time.present? ? @avg_time.in_time_zone("Mumbai").strftime("%I:%M:%S %p") : 'N/A' %> </div>
+  <div> Confidance Time: <%= @confidance_time.present? ? @confidance_time.in_time_zone("Mumbai").strftime("%I:%M:%S %p") : 'N/A' %> </div>
+
+</div>
+</br/>

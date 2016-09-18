@@ -1,0 +1,15 @@
+<p>
+  <div>
+    <strong> Username: </strong>
+    <%= @user.username %>
+  </div>
+  <div>
+    <strong> Average Time: </strong>
+    <%= @avg_time.present? ? @avg_time.in_time_zone("Mumbai").strftime("%I:%M:%S %p") : 'N/A' %>
+  </div>
+  <div>
+    <strong> Confidance arrival time:</strong>
+    <%= @confidance_time.present? ? @confidance_time.in_time_zone("Mumbai").strftime("%I:%M:%S %p") : 'N/A' %>
+  </div>
+</p>
+

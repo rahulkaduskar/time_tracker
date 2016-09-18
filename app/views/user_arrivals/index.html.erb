@@ -1,0 +1,26 @@
+
+<h2> Listing User Arrivals </h2>
+<div>
+
+  <div> Average Arrival Time: <%= @avg_time.present? ? @avg_time.in_time_zone("Mumbai").strftime("%I:%M:%S %p") :'N/A' %> </div>
+  <div> Confidance Time: <%= @confidance_time.present? ? @confidance_time.in_time_zone("Mumbai").strftime("%I:%M:%S %p")  :'N/A' %> </div>
+
+</div>
+</br/>
+<table style='width:400px'>
+  <thead>
+    <tr>
+      <th>User </th>
+      <th> Arrived at </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user_arrivals.each do |user_arrival| %>
+      <tr class="<%= user_arrival.is_arrived_late? ? 'error': '' %> ">
+        <td> <%= user_arrival.user.username %></td>
+        <td> <%= user_arrival.arrived_at.in_time_zone("Mumbai").strftime("%d/%m/%Y on %I:%M:%S %p") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
